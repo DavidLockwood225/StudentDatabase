@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TNJt1Aazd12xTA+Iyuy02wAEwGUC8MXbXXI495NnqtjKaNuWpV0wlzccnh+VkuZTQQvjKzHd/3RWOeS2gzrUQw==",
+  "dgSpecHash": "KTbCcGdwGaMgh0X4ZZmpyMQ9RDgTVkBiEHBcjE64Is2HX6mAgmjW3dA7zjfk1Ej3y8Jh69RhIO/x14eSzXu42w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dharla\\source\\repos\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj",
+  "projectFilePath": "C:\\Users\\Dharla\\Documents\\StudentDatabase\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dharla\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Dharla\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

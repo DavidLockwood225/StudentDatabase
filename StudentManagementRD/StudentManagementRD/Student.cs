@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace StudentManagementRD
 {
@@ -33,7 +34,16 @@ namespace StudentManagementRD
         {
             studentConnection.OpenConnection();
             SqlDataReader dataReader = studentConnection.DataReader("SELECT firstName, lastName FROM Student WHERE StudentID=" + studentID);
-            dataReader.Read();
+            
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+            }
+            else
+            {
+                return "";
+            }
+
             firstName = dataReader["FirstName"].ToString();
             studentConnection.CloseConnection();
             return firstName;
@@ -42,7 +52,16 @@ namespace StudentManagementRD
         {
             studentConnection.OpenConnection();
             SqlDataReader dataReader = studentConnection.DataReader("SELECT firstName, lastName FROM Student WHERE StudentID=" + studentID);
-            dataReader.Read();
+
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+            }
+            else
+            {
+                return "";
+            }
+
             lastName = dataReader["LastName"].ToString();
             studentConnection.CloseConnection();
             return lastName;
@@ -51,7 +70,16 @@ namespace StudentManagementRD
         {
             studentConnection.OpenConnection();
             SqlDataReader dataReader = studentConnection.DataReader("SELECT StudentID FROM Student WHERE FirstName='" + firstName + "' AND LastName='" + lastName + "'");
-            dataReader.Read();
+
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+            }
+            else
+            {
+                return "";
+            }
+
             studentID = dataReader["StudentID"].ToString();
             studentConnection.CloseConnection();
             return studentID;
@@ -186,45 +214,71 @@ namespace StudentManagementRD
             return gpa;
         }
 
-        public void AddNewStudent(string value1, string value2, string value3, string value4, string value5, string value6)
+        public void AddNewStudent(string firstName, string lastName, string dob, string phoneNumber, string email, string address)
         {
             string query;
 
             DbConnection newStudentConnection = new DbConnection();
             newStudentConnection.OpenConnection();
-            query = "INSERT INTO Student VALUES ('" + value1 + "', '" + value2 + "', '" + value3 + "', '" + value4 + "', '" + value5 + "', '" + value6 + "')";
+            query = "INSERT INTO Student VALUES ('" + firstName + "', '" + lastName + "', '" + dob + "', '" + phoneNumber + "', '" + email + "', '" + address + "')";
             newStudentConnection.ExecuteQueries(query);
             newStudentConnection.CloseConnection();
         }
-        public void AddNewOrigin(string value1, string value2, string value3)
+        public void AddNewOrigin(string city, string parish, string zipCode)
         {
             string query;
-            //string studentIDString;
 
             DbConnection newStudentConnection = new DbConnection();
             newStudentConnection.OpenConnection();
-            /*SqlDataReader dataReader = studentConnection.DataReader("Select StudentID FROM Student WHERE FirstName='" + firstName + "' AND LastName = '" + lastName + "'");
-            dataReader.Read();
 
-            studentIDString = dataReader["StudentID"].ToString();*/
-            query = "INSERT INTO Origin VALUES ('" + value1 + "', '" + value2 + "', '" + value3 + "')" ;
+            query = "INSERT INTO Origin VALUES ('" + city + "', '" + parish + "', '" + zipCode + "')" ;
             newStudentConnection.ExecuteQueries(query);
             newStudentConnection.CloseConnection();
         }
-        public void AddNewAcademics(string value1, string value2, string value3)
+        public void AddNewAcademics(string enrollDate, string gradDate, string degree)
         {
             string query;
-            //string studentIDString;
 
             DbConnection newStudentConnection = new DbConnection();
             newStudentConnection.OpenConnection();
-            /*SqlDataReader dataReader = studentConnection.DataReader("Select StudentID FROM Student WHERE FirstName='" + firstName + "' AND LastName = '" + lastName + "'");
-            dataReader.Read();
 
-            studentIDString = dataReader["StudentID"].ToString();*/
-            query = "INSERT INTO Academics VALUES ('" + value1 + "', '" + value2 + "', '" + value3 + "')";
+            query = "INSERT INTO Academics VALUES ('" + enrollDate + "', '" + gradDate + "', '" + degree + "')";
             newStudentConnection.ExecuteQueries(query);
             newStudentConnection.CloseConnection();
+        }
+        public void UpdateStudent(string firstName, string lastName, string dob, string phoneNumber, string email, string address, string studentID)
+        {
+            string query;
+
+            
+                DbConnection updateStudentConnection = new DbConnection();
+                updateStudentConnection.OpenConnection();
+
+                query = "UPDATE Student SET FirstName ='" + firstName + "', LastName ='" + lastName + "', DateOfBirth ='" + dob + "', PhoneNumber ='" + phoneNumber + "', " +
+                    "Email ='" + email + "', Address ='" + address + "' WHERE StudentID =" + studentID;
+                updateStudentConnection.ExecuteQueries(query);
+                updateStudentConnection.CloseConnection();
+
+        }
+        public void UpdateOrigin(string city, string parish, string zipCode, string studentID)
+        {
+            string query;
+
+            DbConnection updateStudentConnection = new DbConnection();
+            updateStudentConnection.OpenConnection();
+
+            query = "UPDATE Origin SET City ='" + city + "', Parish ='" + parish + "', ZIP ='" + zipCode + "' WHERE StudentID =" + studentID;
+            updateStudentConnection.ExecuteQueries(query);
+        }
+        public void UpdateAcademics(string enrollDate, string gradDate, string degree, string studentID)
+        {
+            string query;
+
+            DbConnection updateStudentConnection = new DbConnection();
+            updateStudentConnection.OpenConnection();
+
+            query = "UPDATE Academics SET EnrollmentDate ='" + enrollDate + "', GraduationDate ='" + gradDate + "', Degree ='" + degree + "' WHERE StudentID =" + studentID;
+            updateStudentConnection.ExecuteQueries(query);
         }
     }    
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dharla\\source\\repos\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj": {}
+    "C:\\Users\\Dharla\\Documents\\StudentDatabase\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dharla\\source\\repos\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj": {
+    "C:\\Users\\Dharla\\Documents\\StudentDatabase\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dharla\\source\\repos\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj",
+        "projectUniqueName": "C:\\Users\\Dharla\\Documents\\StudentDatabase\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj",
         "projectName": "StudentManagementRD",
-        "projectPath": "C:\\Users\\Dharla\\source\\repos\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj",
+        "projectPath": "C:\\Users\\Dharla\\Documents\\StudentDatabase\\StudentManagementRD\\StudentManagementRD\\StudentManagementRD.csproj",
         "packagesPath": "C:\\Users\\Dharla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dharla\\source\\repos\\StudentManagementRD\\StudentManagementRD\\obj\\",
+        "outputPath": "C:\\Users\\Dharla\\Documents\\StudentDatabase\\StudentManagementRD\\StudentManagementRD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -64,7 +64,7 @@ namespace StudentManagementRD
             this.label20 = new System.Windows.Forms.Label();
             this.lblGPA = new System.Windows.Forms.Label();
             this.btnFindStudent = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdateStudent = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -362,14 +362,15 @@ namespace StudentManagementRD
             this.btnFindStudent.UseVisualStyleBackColor = true;
             this.btnFindStudent.Click += new System.EventHandler(this.btnFindStudent_Click);
             // 
-            // button2
+            // btnUpdateStudent
             // 
-            this.button2.Location = new System.Drawing.Point(378, 282);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 23);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Update Student";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent.Location = new System.Drawing.Point(378, 282);
+            this.btnUpdateStudent.Name = "btnUpdateStudent";
+            this.btnUpdateStudent.Size = new System.Drawing.Size(104, 23);
+            this.btnUpdateStudent.TabIndex = 36;
+            this.btnUpdateStudent.Text = "Update Student";
+            this.btnUpdateStudent.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // button3
             // 
@@ -396,7 +397,7 @@ namespace StudentManagementRD
             this.ClientSize = new System.Drawing.Size(696, 330);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnUpdateStudent);
             this.Controls.Add(this.btnFindStudent);
             this.Controls.Add(this.lblGPA);
             this.Controls.Add(this.label20);
@@ -476,7 +477,7 @@ namespace StudentManagementRD
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnFindStudent;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdateStudent;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtFirstName;
